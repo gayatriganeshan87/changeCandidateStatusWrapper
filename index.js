@@ -2,12 +2,14 @@ var express = require("express"); //requiring express module
 var app = express(); //creating express instance
 var querystring = require('querystring');
 const axios = require('axios');
+var cors = require('cors');
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger_output.json')
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors())
 
 
 var data = querystring.stringify({
