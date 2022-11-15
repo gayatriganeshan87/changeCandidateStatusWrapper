@@ -1,0 +1,35 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "swagger-autogen": "node swagger.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "and": "^0.0.3",
+    "axios": "^1.1.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "querystring": "^0.2.1",
+    "swagger-autogen": "^2.22.0",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "engines": {
+    "node": ">=14.x",
+    "npm": ">=7.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gayatriganeshan87/changeCandidateStatusWrapper.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/gayatriganeshan87/changeCandidateStatusWrapper/issues"
+  },
+  "homepage": "https://github.com/gayatriganeshan87/changeCandidateStatusWrapper#readme",
+  "description": ""
+}
