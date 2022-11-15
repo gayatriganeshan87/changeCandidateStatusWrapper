@@ -16,6 +16,10 @@ var data = querystring.stringify({
     client_secret: "ca81109d-312d-4ed3-9cf0-19398e26ea9d"
 });
 
+function isEmptyObject(obj) {
+    return !Object.keys(obj).length;
+  }
+
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.put('/changeCandidateInterviewStatus', async (req, res) => {
     try {
@@ -34,7 +38,12 @@ app.put('/changeCandidateInterviewStatus', async (req, res) => {
 
 
         console.log('jwt_token.data.access_token : ' + jwt_token.data.access_token);
-        console.log('requestCandidateBody : ' + requestCandidateBody);
+        console.log('requestCandidateBody : ' + JSON.stringify(requestCandidateBody));
+
+        if(isEmptyObject(requestCandidateBody)){
+            console.log('Inside !requestCandidateBody');
+            requestCandidateBody = null;
+        }
 
 
         let config = {
