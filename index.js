@@ -6,7 +6,7 @@ var cors = require('cors');
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger_output.json')
 const host = '0.0.0.0';
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors())
@@ -71,9 +71,11 @@ app.put('/changeCandidateInterviewStatus', async (req, res) => {
 });
 
 
-app.listen(port, host, function () {
-    console.log("Node server is running..");
-});
+var server = app.listen(PORT, function() {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log('Listening at http://%s:%s', 'localhost', port);
+  });
 
 
 
